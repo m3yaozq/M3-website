@@ -1,0 +1,227 @@
+{egt name="$Think.session.admin_info.is_admin" value="1"}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/static/admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="/static/admin/lib/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="/static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/style.css" />
+	<!--[if IE 6]>
+	<script type="text/javascript" src="/static/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+	<title>添加用户</title>
+	<meta name="keywords" content="漫瑞管理系统">
+	<meta name="description" content="漫瑞管理系统">
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-admin-add">
+		{volist name="tt" id="u"}
+		<div class="row cl" style="display:none;">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>id：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" value="{$u.id}" placeholder="id"  name="id">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>样本编号：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" value="{$u.sample_num}" placeholder="样本编号"  name="sample_num">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>位置编号：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.position_num}" placeholder="位置编号"  name="position_num">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>病人姓名：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.name}" placeholder="病人姓名"  name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>样本类型：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.sample_type}" placeholder="样本类型" name="sample_type">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>存入时间：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.save_time}" placeholder="存入时间" name="save_time">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>实验编号：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.serial_num}" placeholder="实验编号"  name="serial_num">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>Qubit浓度：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.qubit}" placeholder="浓度" name="qubit">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>体积(ul)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.volume}" placeholder="体积"  name="volume">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>总量(ng)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.total}" placeholder="总量"  name="total">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>ALU115浓度(ng/ul)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.alu_a}" placeholder="ALU115浓度"  name="alu_a">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>ALU247浓度(ng/ul)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.alu_b}" placeholder="ALU247浓度"  name="alu_b">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>ALU247/115：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.alu_c}" placeholder="ALU247/115"  name="alu_c">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>总量(ng)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.total_ng}" placeholder="总量(ng)"  name="total_ng">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>预计浓缩后体积(ul)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.expect_volume}" placeholder="预计浓缩后体积" name="expect_volume">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>预计浓缩后浓度(ng/ul)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.expect_qubit}" placeholder="预计浓缩后浓度" name="expect_qubit">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>输入体积：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.input_volume}" placeholder="输入体积"  name="input_volume">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>输入总量：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.input_total}" placeholder="输入总量" name="input_total">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>循环数：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.cycle_num}" placeholder="循环数"  name="cycle_num">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>文库index：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.index}" placeholder="文库"  name="index">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>文库qRCR浓度(nM)：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.index_qubit}" placeholder="文库qRCR浓度"  name="index_qubit">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>建库完成日期：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.complete_date}" placeholder="建库完成日期" name="complete_date">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>备注：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="text" class="input-text" autocomplete="off" value="{$u.note}" placeholder="备注内容" name="note">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-5">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+		{/volist}
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/admin/static/h-ui/js/H-ui.min.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+
+
+<script type="text/javascript">
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+
+        });
+
+        $("#form-admin-add").validate({
+
+            submitHandler:function(form){
+                //alert($('#form-admin-add').serialize()),
+                $(form).ajaxSubmit({
+                    type: 'POST',
+                    url: "{:url('index/sampleupdate')}" ,
+                    data: $('#form-admin-add').serialize(),
+                    dataType: 'json',
+                    success: function(data){
+                        switch (data.status)
+                        {
+                            case 0:
+                                layer.msg(data.mes,{icon:5,time:2000});
+                                break;
+                            case 1:
+                                parent.location.reload();
+                                layer.msg(data.mes,{icon:6,time:2000});
+                                break;
+                        }
+
+                    }
+                });
+
+            }
+        });
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
+{/egt}

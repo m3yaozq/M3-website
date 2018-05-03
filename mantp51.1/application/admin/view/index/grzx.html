@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="/static/admin/lib/layer/2.4/skin/layui.css"  media="all">
+
+</head>
+<body style="padding:10px;">
+
+<h2 style="text-align: center;font-size: 40px;color: #0f9ae0">用户中心</h2>
+<div class="tplay-body-div ">
+    <div style="margin-top: 80px"></div>
+    <div  style="margin: 0 auto;width: 600px">
+    <form class="layui-form" id="form" method="post">
+
+        <div class="layui-form-item" style="margin-top: 30px">
+            <label class="layui-btn layui-bin-normal">账号信息</label>
+        </div>
+        <div class="layui-form-item" style="margin-top: 30px;margin-left: 30px">
+            <label class="layui-form-label" style="left: 90px;font-size: 25px">邮箱：</label>
+            <div class="layui-input-block" style="max-width: 400px">
+                <h2 name="email" style="line-height: 38px;text-align: center;font-size: 25px">{$info.email}</h2>
+            </div>
+        </div>
+        <!--*******************************************************-->
+        <div class="layui-form-item" style="margin-top: 30px">
+            <label class="layui-btn layui-btn-normal">基本信息</label>
+        </div>
+        <div class="layui-form-item" style="margin-top: 50px">
+
+            <label class="layui-form-label" style="margin-left: 200px;font-size: 20px">权限：</label>
+            <label class="layui-btn layui-btn-normal" style="color: floralwhite">{$info.is_admin}</label>
+        </div>
+        <div class="layui-form-item" style="margin-top: 30px">
+            <label class="layui-form-label" style="font-size: 20px">用户名：</label>
+            <div class="layui-input-block" style="border:1px solid red;max-width: 400px">
+                <input name="name" placeholder="请输入姓名" class="layui-input" type="text" value="{$info.name}">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-top: 30px">
+            <label class="layui-form-label" style="font-size: 20px">手机号：</label>
+            <div class="layui-input-block" style="border:1px solid red;max-width: 400px">
+                <input name="mobile" placeholder="请输入手机号" class="layui-input" type="text"  value="{$info.mobile}">
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top: 100px;margin-left: 150px">
+
+            <div class=" layui-form-label layui-btn layui-btn-radius" style="background-color: #01AAED" onclick="baoc()">
+                <a class="preview" style="margin-right: 0; font-size: 12px; color: white">保存信息</a>
+            </div>
+            <label class="layui-form-label"></label>
+            <div class=" layui-form-label layui-btn layui-btn-radius" style="background-color: #00B83F" onclick="xuig()">
+                <a class="preview" style="margin-right: 0; font-size: 12px; color: white">修改密码</a>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+
+    <script>
+function baoc() {
+    //alert($("#form").serialize());
+    layer.confirm('你要确定要保存修改 ？', function(){
+        $.ajax({
+            type: 'post',
+            url: "{:url('baoc')}",
+            data: $("#form").serialize(),
+            dataType: 'json',
+            success:function (data) {
+                if(data.status == 1)
+                {
+                    layer.msg(data.mes, {icon: 6,time:1500},function () {
+                        location.reload();
+                    });
+                }else {
+                    layer.msg(data.mes, {icon: 5,time:1500});
+                }
+            }
+        })
+    })
+}
+    //修改密码
+        function xuig() {
+            layer.open({
+                type: 2,
+                title: '修改密码',
+                shadeClose: true,
+                shade: false,
+                maxmin: true, //开启最大化最小化按钮
+                area: ['400px', '400px'],
+                content: ["{:url('xuig')}",'no'],
+            });
+
+        }
+    </script>
+</div>
+</body>
+</html>

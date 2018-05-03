@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/admin/lib/layer/2.4/skin/layui.css"  media="all">
+    <title>密码修改</title>
+
+</head>
+<body>
+<div style="margin-top: 20px"></div>
+<div  style="margin: 0 auto;width: 600px">
+    <form class="layui-form" id="form" method="post">
+
+        <div class="layui-form-item" style="margin-top: 10px">
+            <label class="layui-btn layui-bin-normal" style="margin-left: 150px">用户密码修改</label>
+        <div class="layui-form-item" style="margin-top: 50px">
+            <label class="layui-form-label" style="font-size: 18px">密码：</label>
+            <div class="layui-input-block" style="border:1px solid red;max-width: 200px">
+                <input name="password" placeholder="密码" class="layui-input" type="password" >
+            </div>
+        </div>
+            <div class="layui-form-item" style="margin-top: 30px">
+                <label class="layui-form-label" style="font-size: 16px">确认密码：</label>
+                <div class="layui-input-block" style="border:1px solid red;max-width: 200px;">
+                    <input name="password_confirm" placeholder="确认密码" class="layui-input" type="password" >
+                </div>
+            </div>
+
+        <div class="layui-form-item" style="margin-top: 50px;margin-left: 165px">
+            <div class=" layui-form-label layui-btn layui-btn-radius" style="background-color: #01AAED" onclick="mima()">
+                <a class="preview" style="margin-right: 0; font-size: 12px; color: white">密码修改</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script>
+    function mima() {
+
+            $.ajax({
+                type: 'post',
+                url: "{:url('mima')}",
+                data: $("#form").serialize(),
+                dataType: 'json',
+                success:function (data) {
+                    switch (data.status)
+                    {
+                        case 0:
+                            layer.msg(data.mes,{icon:"2",offset:'50%',time:2000});
+                            break;
+
+                        case 1:
+                            layer.msg(data.mes,{icon:"5",offset:'50%',time:2000});
+                            break;
+                        case 2:
+                            layer.msg(data.mes,{icon:"6",offset:'50%',time:1200},function () {
+                                location.reload();
+                            });
+                            break;
+                    }
+                }
+            })
+    }
+</script>
+</body>
+</html>
